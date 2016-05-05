@@ -1,0 +1,76 @@
+<html>
+<head>
+	<title>Assignment 2</title>
+	<style type="text/css">
+	#tbl1{
+	border: 2px solid black;
+    width: 100px;
+    text-align: center;
+	}
+	#tbl1 td{
+	border: 2px solid black;	
+	}
+	#btn1{
+		width:100px;
+		border: 2px solid;
+		background-color: cadetblue;
+	}
+
+	</style>
+	<script type="text/javascript">
+	function toggel(){
+		var elem = document.getElementById('btn1');
+		var tbl=document.getElementsByClassName('hide');
+		if(elem.value=="HideOddRow")
+		{ 
+			elem.value="ShowOddRow";
+			var len= tbl.length;
+			for(var i=0;i<len;i++){
+				if(i%2==0){
+					tbl[i].style="display:none";
+				}
+			}
+
+		}
+		else{
+			elem.value="HideOddRow";
+			var len= tbl.length;
+			for(var i=0;i<len;i++){
+				if(i%2==0){
+					tbl[i].style="display:table-row";
+				}
+			}
+
+		}
+
+	}
+
+	</script>
+</head>
+<body>
+	<table id="tbl1">
+		<tbody>
+			<tr class="hide">
+				<td>One</td>
+			</tr>
+			<tr class="hide">
+				<td>Two</td>
+			</tr>
+			<tr class="hide">
+				<td>Three</td>
+			</tr>
+			<tr class="hide">
+				<td>Four</td>
+			</tr>
+			<tr class="hide">
+				<td>Five</td>
+			</tr>
+			<tr class="hide">
+				<td>Six</td>
+			</tr>
+		</tbody>
+	</table>
+	<input id="btn1" type="button" value="HideOddRow" onclick="toggel()">
+
+</body>
+</html>
